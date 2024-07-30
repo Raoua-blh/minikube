@@ -3,8 +3,13 @@
 we started by creating Dockerfile for each project  and build the docker image than push it to dockerhub 
 ## Docker Images :  
 You can pull images from : 
-backend : docker pull rawaablh/fenleap-backend:1.2
-frontend: docker pull rawaablh/fenleap-frontend:latest
+backend :
+```bash 
+ docker pull rawaablh/fenleap-backend:1.2
+
+frontend: 
+```bash 
+ docker pull rawaablh/fenleap-frontend:latest
 
 ## Deploy to minikube :  
 1. **minikube start**
