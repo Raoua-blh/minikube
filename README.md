@@ -117,7 +117,7 @@ nano psql-pvcalim.yaml
 
 ```
 Copy the psql-pvcalim.yaml from the ConfigFile Folder
-2.5- Deploy
+#2.5- Deploy
 ```second
 kubectl apply -f psql-deployment.yaml
 kubectl apply -f psql-pv.yaml
