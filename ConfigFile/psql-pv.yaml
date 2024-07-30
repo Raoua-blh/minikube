@@ -8,8 +8,8 @@ metadata:
 spec:
   storageClassName: manual
   capacity:
-    storage: 6Gi
+    storage: 6Gi  # Storage capacity of the PersistentVolume
   accessModes:
-    - ReadWriteMany
+    - ReadWriteMany # Access mode
   hostPath:
-    path: /data/postgresql
+    path: /data/postgresql  # Host path  where the PersistentVolume is created
