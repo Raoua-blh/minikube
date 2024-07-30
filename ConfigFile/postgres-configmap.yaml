@@ -6,3 +6,4 @@ metadata:
     app: postgres
 data:
   POSTGRES_DB: fenleap-testdb
+  SPRING_DATASOURCE_URL: jdbc:postgresql://postgres:5432/fenleap-testdb
