@@ -1,5 +1,16 @@
 # Deployment of Java Spring Boot and Angular Application on Kubernetes with Minikube
 ==================================================================================
+## Table of Contents
+
+1. [Containerization of Both Applications](#containerization-of-both-applications)
+   - [Backend Application](#backend-application)
+   - [Frontend Application](#frontend-application)
+2. [Docker Images](#docker-images)
+3. [Deploy to Minikube](#deploy-to-minikube)
+   - [Start Minikube](#start-minikube)
+   - [Postgres Deployment](#postgres-deployment)
+
+---
 
 ## Step 1: Containerization of Both Applications
 
@@ -20,7 +31,7 @@
    COPY target/my-spring-boot-app.jar /app
    
    CMD ["java", "-jar", "my-spring-boot-app.jar"]
- ```Build images and push to dockerhub  :
- # Build images and push to dockerhub :
+ ```
+ #Build images and push to dockerhub :
 docker build -t rawaablh/fenleap-backend:1.2 .
 docker push rawaablh/fenleap-backend:1.2
