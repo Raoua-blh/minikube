@@ -231,10 +231,11 @@ plaintext \
    │   └── ingress.yaml \
    │   \
    └── ... \
-2.  ✨#### **Add Ingress for Applications:** \
+✨ #### Add Ingress for Applications: \
 Ingress allows external access to services in a Kubernetes cluster. You can configure Ingress to route traffic to your backend and frontend applications. \
-3. **Each in his dedicated NameSpace :** to ensure isolation and security \
-4. **LoadBalancer :** LoadBalancer services provide a reliable way to expose your application externally. \
+✨#### Each in his dedicated NameSpace :\
+to ensure isolation and security \
+4. ✨**LoadBalancer :** LoadBalancer services provide a reliable way to expose your application externally. \
 Distribute incoming network traffic across multiple pods (instances) of your application.  \
 
 5. ✨ **Container Image Security**: \
