@@ -184,6 +184,7 @@ curl <minikubeip@>:<nodePort>
 ```
 curl 192.168.49.2:30005/employee/v1/
 ```
+![backend](https://github.com/user-attachments/assets/bd771e53-b586-43f6-851d-f69cb8b37cde)
 
 5. **Access frontend**
 ```deploy
