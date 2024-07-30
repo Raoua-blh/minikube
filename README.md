@@ -89,17 +89,17 @@ kubectl cluster-info
 minikube start
 ```
 2. **Deploy postgresql**
-   2.1 - First Create the configmap yaml file \
+   2.1 - First Create the configmap yaml file 
 ```First Create the configmap yaml file
 nano postgres-configmap.yaml
 ```
 Copy the yaml from the ConfigFile Folder \
-2.2 - Second  Create the secret yaml file \
+2.2 - Second  Create the secret yaml file 
 ```second Create the secret yaml file
 nano secret.yaml
 ```
 Copy the yaml from the ConfigFile Folder \
-2.3 - Third  Create the deployment yaml file \
+2.3 - Third  Create the deployment yaml file 
 ```second Create the secret yaml file
 nano psql-deployment.yaml
 ```
@@ -130,12 +130,12 @@ kubectl get pods
 ```
 
 3. **Deploy backend**
-3.1- create the backend deployment file \
+3.1- create the backend deployment file 
 ```Create the backend yaml file
 nano backend-deployment.yaml
 ```
 Copy the yaml from the ConfigFile Folder\
-3.2- create the Service file \
+3.2- create the Service file 
 ```Create the backend-service yaml file
 nano backend-service.yaml
 ```
@@ -148,12 +148,12 @@ kubectl apply -f backend-service.yaml
 ```
 
 4. **Deploy frontend**
-4.1- create the front deployment file \
+4.1- create the front deployment file 
 ```Create the frontend yaml file
 nano frontend-deployment.yaml
 ```
 Copy the yaml from the ConfigFile Folder \
-4.2- create the Service file \
+4.2- create the Service file 
 ```Create the backend-service yaml file
 nano frontend-service.yaml
 ```
@@ -164,4 +164,26 @@ kubectl apply -f frontend-deployment.yaml
 kubectl apply -f frontend-service.yaml
 ```
 
+4. **Access backendr**
+```deploy
+minikube ip
+curl <minikubeip@>:<nodePort>
+#for exemple you can check employee list 
+curl 192.168.49.2:30005/employee/v1/
+```
+5. **Access frontend**
+```deploy
+minikube ip
+curl <minikubeip@>:<nodePort>
+#for exemple you can check employee list 
+curl 192.168.49.2:30000
+```
+6. **Access backend from your machine browser**
+```deploy
+ kubectl port-forward --address 0.0.0.0 -n default service/spring-service 30005:8089
+```
+6. **Access frontend from your machine browser**
+```deploy
+kubectl port-forward --address 0.0.0.0 -n default service/angular 30000:80
+```
 
