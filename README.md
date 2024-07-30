@@ -219,33 +219,33 @@ To facilitate the management of Kubernetes deployments, consider using Helm, a p
    Helm Charts define, install, and upgrade Kubernetes applications. You can create Helm Charts for your backend and frontend applications. Here's a basic example of a Helm Chart structure:
 
    
-plaintext
-   myapp/
-   ├── Chart.yaml        # Metadata about the chart
-   ├── values.yaml       # Default configuration values
-   ├── templates/        # Kubernetes manifest templates
-   │   ├── deployment.yaml
-   │   ├── service.yaml
-   │   └── secrets.yaml
-   │    └── configmap.yaml
-   │   └── ingress.yaml
-   │   
-   └── ...
-2. **Add Ingress for Applications:**
-Ingress allows external access to services in a Kubernetes cluster. You can configure Ingress to route traffic to your backend and frontend applications.
-3. **Each in his dedicated NameSpace :** to ensure isolation and security 
-4. **LoadBalancer :** LoadBalancer services provide a reliable way to expose your application externally.
-Distribute incoming network traffic across multiple pods (instances) of your application. 
+plaintext \
+   myapp/ \
+   ├── Chart.yaml        # Metadata about the chart \
+   ├── values.yaml       # Default configuration values \
+   ├── templates/        # Kubernetes manifest templates \
+   │   ├── deployment.yaml \
+   │   ├── service.yaml \
+   │   └── secrets.yaml \
+   │   └── configmap.yaml \
+   │   └── ingress.yaml \
+   │   \
+   └── ... \
+2. **Add Ingress for Applications:** \
+Ingress allows external access to services in a Kubernetes cluster. You can configure Ingress to route traffic to your backend and frontend applications. \
+3. **Each in his dedicated NameSpace :** to ensure isolation and security \
+4. **LoadBalancer :** LoadBalancer services provide a reliable way to expose your application externally. \
+Distribute incoming network traffic across multiple pods (instances) of your application.  \
 
-5.  **Container Image Security**:
-    Allow deploying containers only from known registries to ensure image authenticity and security.
-6. **Role-based Access Control (RBAC):**
- to define fine-grained access policies for Kubernetes resources, restricting access based on roles and permissions.
-7. **Readiness and Liveness Probes:**
- to ensure Kubernetes knows when your application is ready to serve traffic and when it needs restarting.
-8. **Horizontal Pod Autoscaler (HPA):** Configure HPAs to automatically scale the number of replicas of your applications based on CPU or custom metrics.
-9. **Monitor Cluster Resources**
- to track resource usage, performance metrics, and detect potential issues.
+5.  **Container Image Security**: \
+    Allow deploying containers only from known registries to ensure image authenticity and security. \
+6. **Role-based Access Control (RBAC):** \
+ to define fine-grained access policies for Kubernetes resources, restricting access based on roles and permissions. \
+7. **Readiness and Liveness Probes:** \
+ to ensure Kubernetes knows when your application is ready to serve traffic and when it needs restarting. \
+8. **Horizontal Pod Autoscaler (HPA):** Configure HPAs to automatically scale the number of replicas of your applications based on CPU or custom metrics. \
+9. **Monitor Cluster Resources** \
+ to track resource usage, performance metrics, and detect potential issues. \
 
 
 
