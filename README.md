@@ -26,13 +26,11 @@
    Example Dockerfile:
    ```dockerfile
    # Dockerfile for Spring Boot Backend
-   FROM openjdk:11-jre-slim
-   
+   FROM openjdk:17-jdk-slim
    WORKDIR /app
-   
-   COPY target/my-spring-boot-app.jar /app
-   
-   CMD ["java", "-jar", "my-spring-boot-app.jar"]
+   COPY target/Demo-backend-0.0.1-SNAPSHOT.jar Fenleap-backend.jar
+   EXPOSE 8089
+   ENTRYPOINT ["java", "-jar", "Fenleap-backend.jar"]
 
  #Build images and push to dockerhub :
 ```dockercmd
@@ -47,11 +45,9 @@ docker push rawaablh/fenleap-backend:1.2
    - Build the Docker image and push it to Docker Hub.
    
    Example Dockerfile:
-   ```dockerfile
-   # Dockerfile for Spring Boot Backend
-# Stage 1: Build the Angular application
 
 ```Dockerfile
+# Stage 1: Build the Angular application
 FROM node:16.15 AS builder
 
 WORKDIR /usr/src/app
