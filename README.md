@@ -139,18 +139,29 @@ Copy the yaml from the ConfigFile Folder
 ```Create the backend-service yaml file
 nano backend-service.yaml
 ```
-Copy the yaml from the ConfigFile Folder
-3. **Deploy frontend**
-3.1- create the front deployment file 
+Copy the yaml from the ConfigFile Folder \
+
+3.3- deploy
+```Create the backend-service yaml file
+kubectl apply -f backend-deployment.yaml
+kubectl apply -f backend-service.yaml
+```
+
+4. **Deploy frontend**
+4.1- create the front deployment file \
 ```Create the frontend yaml file
 nano frontend-deployment.yaml
 ```
-Copy the yaml from the ConfigFile Folder
-3.2- create the Service file 
+Copy the yaml from the ConfigFile Folder \
+4.2- create the Service file \
 ```Create the backend-service yaml file
 nano frontend-service.yaml
 ```
-Copy the yaml from the ConfigFile Folder
-
+Copy the yaml from the ConfigFile Folder \
+4.3- deploy
+```deploy
+kubectl apply -f frontend-deployment.yaml
+kubectl apply -f frontend-service.yaml
+```
 
 
