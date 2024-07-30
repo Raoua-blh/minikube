@@ -77,6 +77,12 @@ EXPOSE 8082
 docker build -t rawaablh/fenleap-frontend:latest .
 docker push rawaablh/fenleap-frontend:latest
 ```
+
+### Docker-images
+```dockercld
+docker pull  rawaablh/fenleap-backend:1.2 
+docker pull rawaablh/fenleap-frontend:latest
+```
 ### Deploy-to-minikube
 1. **esnure everything works fine**
 ```check
@@ -84,6 +90,7 @@ minikube version
 minikube status
 kubectl cluster-info
 ```
+ ### start-minikube
 1. **minikube start**
 ```start
 minikube start
