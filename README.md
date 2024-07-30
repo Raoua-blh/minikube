@@ -231,21 +231,25 @@ plaintext \
    │   └── ingress.yaml \
    │   \
    └── ... \
-✨ #### Add Ingress for Applications: \
-Ingress allows external access to services in a Kubernetes cluster. You can configure Ingress to route traffic to your backend and frontend applications. \
-✨#### Each in his dedicated NameSpace :\
+  
+   #### ✨Add Ingress for Applications 
+[Ingress]([https://helm.sh/](https://kubernetes.io/fr/docs/concepts/services-networking/ingress/) allows external access to services in a Kubernetes cluster. You can configure Ingress to route traffic to your backend and frontend applications. \
+ #### ✨Each in his dedicated NameSpace  \
 to ensure isolation and security \
-4. ✨**LoadBalancer :** LoadBalancer services provide a reliable way to expose your application externally. \
+#### ✨LoadBalancer
+LoadBalancer services provide a reliable way to expose your application externally. \
 Distribute incoming network traffic across multiple pods (instances) of your application.  \
-
-5. ✨ **Container Image Security**: \
-    Allow deploying containers only from known registries to ensure image authenticity and security. \
-6.✨ **Role-based Access Control (RBAC):** \
+#### ✨Container Image Security
+ Allow deploying containers only from known registries to ensure image authenticity and security. \
+ #### ✨Role-based Access Control (RBAC):
+ \
  to define fine-grained access policies for Kubernetes resources, restricting access based on roles and permissions. \
-7.✨ **Readiness and Liveness Probes:** \
+ #### ✨Readiness and Liveness Probes:
+\
  to ensure Kubernetes knows when your application is ready to serve traffic and when it needs restarting. \
-8. ✨**Horizontal Pod Autoscaler (HPA):** Configure HPAs to automatically scale the number of replicas of your applications based on CPU or custom metrics. \
-9. ✨**Monitor Cluster Resources** \
+ #### ✨Horizontal Pod Autoscaler (HPA):
+ Configure HPAs to automatically scale the number of replicas of your applications based on CPU or custom metrics. \
+ #### ✨Monitor Cluster Resources :
  to track resource usage, performance metrics, and detect potential issues. \
 
 
