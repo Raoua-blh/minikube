@@ -21,5 +21,6 @@
    
    CMD ["java", "-jar", "my-spring-boot-app.jar"]
  ```Build images and push to dockerhub  :
+ # Build images and push to dockerhub :
 docker build -t rawaablh/fenleap-backend:1.2 .
 docker push rawaablh/fenleap-backend:1.2
