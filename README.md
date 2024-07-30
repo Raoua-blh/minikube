@@ -89,17 +89,17 @@ kubectl cluster-info
 minikube start
 ```
 2. **Deploy postgresql**
-   2.1 - First Create the configmap yaml file
+   2.1 - First Create the configmap yaml file \
 ```First Create the configmap yaml file
 nano postgres-configmap.yaml
 ```
-Copy the yaml from the ConfigFile Folder
-2.2 - Second  Create the secret yaml file
+Copy the yaml from the ConfigFile Folder \
+2.2 - Second  Create the secret yaml file \
 ```second Create the secret yaml file
 nano secret.yaml
 ```
-Copy the yaml from the ConfigFile Folder
-2.3 - Third  Create the deployment yaml file
+Copy the yaml from the ConfigFile Folder \
+2.3 - Third  Create the deployment yaml file \
 ```second Create the secret yaml file
 nano psql-deployment.yaml
 ```
@@ -110,32 +110,32 @@ THE PV  provides dedicated storage space for the database
 ```second Create the pv yaml file
 nano psql-pv.yaml
 ```
-Copy the yaml from the ConfigFile Folder
+Copy the yaml from the ConfigFile Folder\
 
 ```second Create the pvc yaml file
 nano psql-pvcalim.yaml
 
 ```
-Copy the psql-pvcalim.yaml from the ConfigFile Folder
-#2.5- Deploy
+Copy the psql-pvcalim.yaml from the ConfigFile Folder\
+2.5- Deploy
 ```second
 kubectl apply -f psql-deployment.yaml
 kubectl apply -f psql-pv.yaml
 kubectl apply -f psql-claim.yaml
 ```
-Check for deployment : 
+Check for deployment : \
 ```second
 kubectl get deployment
 kubectl get pods
 ```
 
 3. **Deploy backend**
-3.1- create the backend deployment file 
+3.1- create the backend deployment file \
 ```Create the backend yaml file
 nano backend-deployment.yaml
 ```
-Copy the yaml from the ConfigFile Folder
-3.2- create the Service file 
+Copy the yaml from the ConfigFile Folder\
+3.2- create the Service file \
 ```Create the backend-service yaml file
 nano backend-service.yaml
 ```
