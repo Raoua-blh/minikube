@@ -95,6 +95,8 @@ kubectl cluster-info
 ```start
 minikube start
 ```
+
+### postgres-deployment
 2. **Deploy postgresql**
    2.1 - First Create the configmap yaml file 
 ```First Create the configmap yaml file
