@@ -191,8 +191,9 @@ curl 192.168.49.2:30000
  kubectl port-forward --address 0.0.0.0 -n default service/spring-service 30005:8089
 ```
 To check \
+
 <ur-vmIp@>:<backendnodeport>/employee/v1/
-for exemple : \
+for exemple : 
 ```deploy
 http://192.168.1.21:30005/employee/v1/
 ```
@@ -202,7 +203,7 @@ kubectl port-forward --address 0.0.0.0 -n default service/angular 30000:80
 ```
 To check \
 <ur-vmIp@>:<frontendnodeport>
-for exemple : \
+for exemple : 
 ```deploy
 http://192.168.1.21:30000
 ```
