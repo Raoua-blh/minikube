@@ -3,7 +3,7 @@ kind: Deployment
 metadata:
   name: springboot
 spec:
-  replicas: 1
+  replicas: 1 # Number of replicas (instances) of the application to run
   selector:
     matchLabels:
       app: springboot
@@ -13,17 +13,21 @@ spec:
         app: springboot
     spec:
       containers:
-        - name: springboot
-          image: rawaablh/fenleap-backend:1.2
+        - name: springboot  # Name of the container
+          image: rawaablh/fenleap-backend:1.2 # Environment variable for database URL
           ports:
             - containerPort: 8089
-          env:
-            - name: SPRING_DATASOURCE_URL
-              value: jdbc:postgresql://postgres:5432/fenleap-testdb
+          env: 
+            - name: SPRING_DATASOURCE_URL # Environment variable for database URL
+              value: jdbc:postgresql://postgres:5432/fenleap-testdb # postgres database url oups i forget to put it in the configmap :3 (best practice is to add it with databasename as follow)  - name: SPRING_DATASOURCE_URL
+              #valueFrom:
+              #  configMapKeyRef:
+              #    name: postgres-configmap  # Name of the ConfigMap
+              #   key: SPRING_DATASOURCE_URL  # Key within the ConfigMap 
             - name: SPRING_DATASOURCE_USERNAME
               valueFrom:
                 secretKeyRef:
-                  name: postgres-secret
+                  name: postgres-secret # Name of the Kubernetes Secret
                   key: POSTGRES_USER
             - name: SPRING_DATASOURCE_PASSWORD
               valueFrom:
