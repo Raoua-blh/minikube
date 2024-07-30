@@ -31,11 +31,13 @@
    COPY target/my-spring-boot-app.jar /app
    
    CMD ["java", "-jar", "my-spring-boot-app.jar"]
- ```dockercmd
+
  #Build images and push to dockerhub :
+```dockercmd
 docker build -t rawaablh/fenleap-backend:1.2 .
 docker push rawaablh/fenleap-backend:1.2
 
+```
 ### Frontend Application
 1. **Dockerfile for frontend:**
    
@@ -46,6 +48,8 @@ docker push rawaablh/fenleap-backend:1.2
    ```dockerfile
    # Dockerfile for Spring Boot Backend
 # Stage 1: Build the Angular application
+
+```Dockerfile
 FROM node:16.15 AS builder
 
 WORKDIR /usr/src/app
@@ -61,13 +65,92 @@ RUN npm run build --prod
 CMD ["npm", "start"]
 
 # Stage 2: Create the Nginx image to serve the built app
+
 FROM nginx:alpine
 
 COPY --from=builder ./usr/src/app/dist/fenleap-frontend /usr/share/nginx/html
 # Copy the build artifacts from the builder stage
 EXPOSE 8082
-
- ```dockercmd
+```
  #Build images and push to dockerhub :
+```dockercld
 docker build -t rawaablh/fenleap-frontend:latest .
 docker push rawaablh/fenleap-frontend:latest
+```
+### Deploy-to-minikube
+1. **esnure everything works fine**
+```check
+minikube version
+minikube status
+kubectl cluster-info
+```
+1. **minikube start**
+```start
+minikube start
+```
+2. **Deploy postgresql**
+   2.1 - First Create the configmap yaml file
+```First Create the configmap yaml file
+nano postgres-configmap.yaml
+```
+Copy the yaml from the ConfigFile Folder
+2.2 - Second  Create the secret yaml file
+```second Create the secret yaml file
+nano secret.yaml
+```
+Copy the yaml from the ConfigFile Folder
+2.3 - Third  Create the deployment yaml file
+```second Create the secret yaml file
+nano psql-deployment.yaml
+```
+Copy the yaml from the ConfigFile Folder
+2.4 - fourth configuring the persistante Storage  
+Configuring Persistent Storage with PV (Persistent Volumes) and PVC (Persistent Volume Claims) help us  ensure data persistence across pod restarts and failures, safeguarding against data loss in the containerized environment.
+THE PV  provides dedicated storage space for the database 
+```second Create the pv yaml file
+nano psql-pv.yaml
+```
+Copy the yaml from the ConfigFile Folder
+
+```second Create the pvc yaml file
+nano psql-pvcalim.yaml
+
+```
+Copy the psql-pvcalim.yaml from the ConfigFile Folder
+2.5- Deploy
+```second
+kubectl apply -f psql-deployment.yaml
+kubectl apply -f psql-pv.yaml
+kubectl apply -f psql-claim.yaml
+```
+Check for deployment : 
+```second
+kubectl get deployment
+kubectl get pods
+```
+
+3. **Deploy backend**
+3.1- create the backend deployment file 
+```Create the backend yaml file
+nano backend-deployment.yaml
+```
+Copy the yaml from the ConfigFile Folder
+3.2- create the Service file 
+```Create the backend-service yaml file
+nano backend-service.yaml
+```
+Copy the yaml from the ConfigFile Folder
+3. **Deploy frontend**
+3.1- create the front deployment file 
+```Create the frontend yaml file
+nano frontend-deployment.yaml
+```
+Copy the yaml from the ConfigFile Folder
+3.2- create the Service file 
+```Create the backend-service yaml file
+nano frontend-service.yaml
+```
+Copy the yaml from the ConfigFile Folder
+
+
+
