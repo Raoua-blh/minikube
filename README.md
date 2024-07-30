@@ -20,3 +20,6 @@
    COPY target/my-spring-boot-app.jar /app
    
    CMD ["java", "-jar", "my-spring-boot-app.jar"]
+Build images and push to dockerhub  :
+ ``docker build -t rawaablh/fenleap-backend:1.2 .
+docker push rawaablh/fenleap-backend:1.2
