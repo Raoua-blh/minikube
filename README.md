@@ -10,7 +10,7 @@
    - [Start Minikube](#start-minikube)
    - [Postgres Deployment](#postgres-deployment)
    - [Backend Deployment](#backend-deployment)
-   - [Frontend Deployment](#front-deployment)
+   - [Frontend Deployment](#frontend-deployment)
    - [Result Check](#result-check)
 ---
 
@@ -171,23 +171,28 @@ kubectl apply -f frontend-service.yaml
 ```deploy
 minikube ip
 curl <minikubeip@>:<nodePort>
+```
 #for exemple you can check employee list 
+```
 curl 192.168.49.2:30005/employee/v1/
 ```
+
 5. **Access frontend**
 ```deploy
 minikube ip
 curl <minikubeip@>:<nodePort>
+```
 #for exemple you can check employee list 
+```
 curl 192.168.49.2:30000
 ```
 6. **Access backend from your machine browser**
 ```deploy
  kubectl port-forward --address 0.0.0.0 -n default service/spring-service 30005:8089
 ```
-To check 
+To check \
 <ur-vmIp@>:<backendnodeport>/employee/v1/
-for exemple : 
+for exemple : \
 ```deploy
 http://192.168.1.21:30005/employee/v1/
 ```
@@ -195,9 +200,9 @@ http://192.168.1.21:30005/employee/v1/
 ```deploy
 kubectl port-forward --address 0.0.0.0 -n default service/angular 30000:80
 ```
-To check 
+To check \
 <ur-vmIp@>:<frontendnodeport>
-for exemple : 
+for exemple : \
 ```deploy
 http://192.168.1.21:30000
 ```
