@@ -172,6 +172,7 @@ Copy the yaml from the ConfigFile Folder \
 kubectl apply -f frontend-deployment.yaml
 kubectl apply -f frontend-service.yaml
 ```
+![image](https://github.com/user-attachments/assets/1bb9cc8e-7706-4fdc-a323-6411275680f1)
 
 ### Result-check
 4. **Access backendr**
