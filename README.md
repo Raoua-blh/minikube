@@ -11,6 +11,7 @@
    - [Postgres Deployment](#postgres-deployment)
    - [Backend Deployment](#backend-deployment)
    - [Frontend Deployment](#front-deployment)
+   - [Result Check](#result-check)
 ---
 
 ## Step 1: Containerization of Both Applications
@@ -129,7 +130,7 @@ Check for deployment : \
 kubectl get deployment
 kubectl get pods
 ```
-
+### Backend-deployment
 3. **Deploy backend**
 3.1- create the backend deployment file 
 ```Create the backend yaml file
@@ -147,7 +148,7 @@ Copy the yaml from the ConfigFile Folder \
 kubectl apply -f backend-deployment.yaml
 kubectl apply -f backend-service.yaml
 ```
-
+### Frontend-deployment
 4. **Deploy frontend**
 4.1- create the front deployment file 
 ```Create the frontend yaml file
@@ -165,6 +166,7 @@ kubectl apply -f frontend-deployment.yaml
 kubectl apply -f frontend-service.yaml
 ```
 
+### Result-check
 4. **Access backendr**
 ```deploy
 minikube ip
